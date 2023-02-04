@@ -25,8 +25,24 @@ product_list = df.PRODUCT_CODE.unique().tolist()
 product_list.insert(0,'ALL')
 product = col5.selectbox('PRODUCT_CODE',options = product_list)
 
+f1 = (df['LOGIN_DATE']>=date1)
+f2 = (df['LOGIN_DATE'] <= date2)
 
+if branch == 'COUNTRY':
+  f3 = (1==1)
+else:
+  f3 = (df['BRANCH_CODE']==branch)
+if emp = 'OVERALL':
+  f4 = (1==1)
+else:
+  f4 = (df['EMP_ID']==emp)
+if product == 'ALL':
+  f5 = (1==1)
+else:
+  f5 = (df['PRODUCT_CODE']==product)
 
+filter = (f1 & f2 & f3 & f4 & f5)
 
-
-st.dataframe(df)
+col1, col2 = st.columns(2)
+col1.dataframe(df)
+col2.dataframe(df[filter])
