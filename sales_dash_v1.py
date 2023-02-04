@@ -18,7 +18,7 @@ if branch == 'COUNTRY':
 else:
   emp_list = df['EMP_ID'][(df['BRANCH_CODE']==branch)].unique().tolist()
 
-emp_list.insert(0,'Overall')
+emp_list.insert(0,'OVERALL')
 emp = col4.selectbox('Select EMP_ID',options = emp_list)
 
 product_list = df.PRODUCT_CODE.unique().tolist()
