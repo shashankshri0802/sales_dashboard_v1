@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+
 df = pd.read_csv('data_sheet.csv')
 
 col1, col2, col3, col4, col5 = st.columns(5)
