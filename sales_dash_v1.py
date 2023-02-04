@@ -43,6 +43,9 @@ else:
 
 filter = (f1 & f2 & f3 & f4 & f5)
 
-col1, col2 = st.columns(2)
-col1.dataframe(df)
-col2.dataframe(df[filter])
+tab1,tab2 = st.tabs(['Summary','Reportee View']
+
+with tab1:
+  col1, col2 = st.columns(2)
+  col1.dataframe(df)
+  col2.dataframe(df[filter])
