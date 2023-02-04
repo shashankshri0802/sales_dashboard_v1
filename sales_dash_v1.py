@@ -54,7 +54,7 @@ with tab1:
 
 summary0 = df[filter].groupby('FLAG2')["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"].sum().rest_index()
 st.dataframe(summary0)
-summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
+#summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
 #summary1 = pd.melt(summary0, id_vars =['FLAG2'], value_vars =["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
 
 #st.dataframe(summary1)
