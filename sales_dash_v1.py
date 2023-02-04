@@ -54,6 +54,7 @@ with tab1:
   summary0 = summary_1.groupby('FLAG2')[["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG","LOGIN_AMT","INCOME_SANCTION_AMT","FINAL_SANCTION_AMT","BOOKING_AMT"]].sum().reset_index()  
   summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
   summary2 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_AMT","INCOME_SANCTION_AMT","FINAL_SANCTION_AMT","BOOKING_AMT"])
+  summary2['value'] = round(summary2['value']/10000000,2)
   fig_one = px.bar(summary1,x='variable',y='value',text='value',height=300)
   fig_two = px.bar(summary2,x='variable',y='value',text='value',height=300)
   tab3.plotly_chart(fig_one,use_container_width=True)
