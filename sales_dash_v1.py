@@ -59,4 +59,4 @@ summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOM
 
 st.dataframe(summary1)
 
-fig_one = px.bar(summary1,x='variable',y='value',text='value',hight=300)
+fig_one = px.bar(summary1,x='variable',y='value',text='value',height=300)
