@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 df = pd.read_csv('data_sheet.csv')
-branch_list = df.BRANCH_CODE.sort_values(ascending=Ture).unique()
+branch_list = df.BRANCH_CODE.unique()
 
 col1, col2, col3, col4, col5 = st.columns(5)
 
