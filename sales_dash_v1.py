@@ -23,7 +23,7 @@ emp = col4.selectbox('Select EMP_ID',options = emp_list)
 
 product_list = df.PRODUCT_CODE.unique().tolist()
 product_list.insert(0,'ALL')
-product = col5.selectbox('Select PRODUCT_CODE',options = product_list)
+product = col5.selectbox('PRODUCT_CODE',options = product_list)
 
 
 
