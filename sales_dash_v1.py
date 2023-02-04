@@ -49,15 +49,7 @@ tab1,tab2 = st.tabs(['Summary','Reportee View'])
 
 with tab1:
   col1, col2 = st.columns(2)
-  col1.dataframe(df)
-  col2.dataframe(df[filter])
-
-summary0 = df[filter].groupby('FLAG2')[["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"]].sum().reset_index()
-st.dataframe(summary0)
-summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
-#summary1 = pd.melt(summary0, id_vars =['FLAG2'], value_vars =["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
-
-st.dataframe(summary1)
-
-fig_one = px.bar(summary1,x='variable',y='value',text='value',height=300)
-st.plotly_chart(fig_one,use_container_width=True)
+  summary0 = df[filter].groupby('FLAG2')[["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"]].sum().reset_index()
+  summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
+  fig_one = px.bar(summary1,x='variable',y='value',text='value',height=300)
+  col1.plotly_chart(fig_one,use_container_width=True)
