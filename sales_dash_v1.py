@@ -3,7 +3,7 @@ import pandas as pd
 
 df = pd.read_csv('data_sheet.csv')
 branch_list = df.BRANCH_CODE.unique().tolist()
-branch_list.insert(0,0)
+branch_list.insert(0,'ALL')
 
 col1, col2, col3, col4, col5 = st.columns(5)
 
