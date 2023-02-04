@@ -60,3 +60,4 @@ summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOM
 st.dataframe(summary1)
 
 fig_one = px.bar(summary1,x='variable',y='value',text='value',height=300)
+st.plotly_chart(fig_one,use_container_width=True)
