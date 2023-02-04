@@ -52,11 +52,11 @@ with tab1:
   col1.dataframe(df)
   col2.dataframe(df[filter])
 
-summary0 = df[filter].groupby('FLAG2')["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"].sum().reset_index()
+summary0 = df[filter].groupby('FLAG2')[["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"]].sum().reset_index()
 st.dataframe(summary0)
 summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
 #summary1 = pd.melt(summary0, id_vars =['FLAG2'], value_vars =["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
 
 st.dataframe(summary1)
 
-#fig_one = px.bar()
+fig_one = px.bar(summary1,x='variable',y='value',text='value',hight=300)
