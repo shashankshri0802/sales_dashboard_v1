@@ -49,3 +49,7 @@ with tab1:
   col1, col2 = st.columns(2)
   col1.dataframe(df)
   col2.dataframe(df[filter])
+
+summary0 = df[filter].groupby('FLAG2')["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"].sum()
+st.dataframe(summary0)
+
