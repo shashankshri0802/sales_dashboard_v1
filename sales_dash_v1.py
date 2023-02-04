@@ -1,2 +1,6 @@
 import streamlit as st
-st.write('hellow world')
+import pandas as pd
+
+df = pd.read_csv('data_sheet.csv')
+
+st.dataframe(df)
