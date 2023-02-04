@@ -51,7 +51,7 @@ with tab1:
   col1, col2 = st.columns(2)
   tab3,tab4 = col1.tabs(['Counts','Amount'])
   summary_1 = df[filter].groupby('LAN').nth(0).reset_index()
-  summary0 = summary_1.groupby('FLAG2')[["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG","lOGIN_AMOUNT","INCOME_SANCTION_AMT","FINAL_SANCTION_AMT","BOOKING_AMOUNT"]].sum().reset_index()
+  summary0 = summary_1.groupby('FLAG2')[["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG","lOGIN_AMOUNT","INCOME_SANCTION_AMT","FINAL_SANCTION_AMT","BOOKING_AMT"]].sum().reset_index()
   summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
   summary2 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["lOGIN_AMOUNT","INCOME_SANCTION_AMT","FINAL_SANCTION_AMT","BOOKING_AMOUNT"])
   fig_one = px.bar(summary1,x='variable',y='value',text='value',height=300)
