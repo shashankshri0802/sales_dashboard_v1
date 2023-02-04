@@ -32,7 +32,7 @@ if branch == 'COUNTRY':
   f3 = (1==1)
 else:
   f3 = (df['BRANCH_CODE']==branch)
-if emp = 'OVERALL':
+if emp == 'OVERALL':
   f4 = (1==1)
 else:
   f4 = (df['EMP_ID']==emp)
