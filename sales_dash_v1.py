@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+#import plotly.express as px
 
 df = pd.read_csv('data_sheet.csv')
 
@@ -52,7 +52,7 @@ with tab1:
   col2.dataframe(df[filter])
 
 summary0 = df[filter].groupby('FLAG2')["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"].sum()
-summary1 = pd.melt(summary0, id_vars='FLAG2',value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
+summary1 = pd.melt(summary0, id_vars=['FLAG2'],value_vars = ["LOGIN_FLAG","INCOME_SANCTION_FLAG","FINAL_SANCTION_FLAG","BOOKING_FLAG"])
 st.dataframe(summary0)
 st.dataframe(summary1)
 
